@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShereCom</title>
+    <title>Shere.Com</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <h1 class="title">
+        <a class="title-logo" href="/">Share.com</a>
+      </h1>
+      <nav class="header-nav">
+        <ul class="menu-group">
+          <li class="login"><a class="btn" href="/users/sign_in">ログイン</a></li>
+          <li class="register"><a class="btn" href="/users/sign_up">登録する</a></li>
+          <li><%= button_to "サインアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="clearfix"></div>
+    <div class="notifications">
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+    </div>
     <%= yield %>
+    <footer>
+     <p>@Share.com</p>
+    </footer>
   </body>
 </html>
