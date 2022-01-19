@@ -1,0 +1,553 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 180px;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+p {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+ul {
+   list-style: none;
+}
+
+.notice {
+  background-color: lightBlue;
+  color: white;
+  text-align: center;
+}
+
+.required-a::after {
+  content: "必須";
+  color: #fff;
+  background-color: #ff0000a8;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
+}
+
+
+.required-b::before {
+  content: "必須";
+  color: #fff;
+  background-color: #ff0000a8;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
+}
+
+.price-icon::before {
+  content: "￥";
+  padding-right: 3px;
+}
+
+.host-icon {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 35px;
+}
+
+/*ヘッダーのcss---------------*/
+header {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: black;
+  align-items: center;
+}
+
+.title {
+  margin-right: auto;
+  margin-left: 40px
+}
+
+.menu-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-group li{
+  margin-right: 20px;
+  margin-top: 18px;
+}
+
+.user-name {
+  color: white;
+}
+/*titleのフォント読み込み*/
+@import 
+url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+.title-logo{
+  color: white;
+  font-family: 'Caveat', cursive;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.title-logo:hover{
+  opacity: 0.8;
+}
+
+.logout {
+  padding-right: 30px;
+}
+
+/*フッターのcss---------------*/
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  margin-top: 64px;
+  padding-top: 90px;
+  background-color: black;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+/*devise関連のcss---------------*/
+.devise {
+  padding-top: 36px;
+  font-size: 16px;
+}
+
+.devise_title p {
+  font-size: 16px;
+}
+
+.devise_frame {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 0px auto;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(21, 27, 38, 0.15) 0px 1px 3px 0px;
+}
+
+.devise_inner {
+  width: 360px;
+  margin: 0px auto;
+  a{
+    text-decoration: none;
+    color: #1E90FF;
+  }
+}
+
+.form-control {
+  width: 100%;
+  height: 35px;
+  margin: 8px;
+  border: 1px solid #DCDCDC;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  color: white;
+  background-color: #1E90FF;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+
+
+
+span {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+.form-area-title {
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1px;
+}
+
+.form-fream {
+  height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.form-area {
+  background: #fff;
+  padding: 24px;
+  border-radius: 5px;
+}
+
+.top-main {
+  background-image: image-url('img_cover_top-2.jpg');
+  background-size: cover;
+  height: 650px;
+  width: 100%;
+}
+
+
+.section-title {
+  font-size: 24px;
+  margin: 35px 0;
+  margin-left: 150px;
+  font-weight: bold;
+}
+
+.row {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.panel-item {
+  position: relative;
+  max-width: 25%;
+  height: 385px;
+  margin-right: 25px;
+  margin-bottom: 50px;
+}
+
+.panel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.room {
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.room-frame-inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+
+.room-image-out {
+  position: relative;
+  width: 100%;
+  background: #F6F8F9;
+  height: 200px;
+}
+
+.room-image {
+  position: absolute;
+  top: 20px;
+  object-fit: cover;
+}
+
+.room-profile {
+  width: 100%;
+  padding: 15px;
+}
+
+.room-profile p {
+  word-break: break-all;
+}
+
+.room-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+
+.room-profile-city {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.room-profile-address {
+  letter-spacing: 1px;
+}
+
+.room-profile-price {
+  text-align: right;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+
+
+.room-show, .reservations-new {
+  padding: 30px 0;
+}
+
+.room-show-check-content, .reservations-new-check-content {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.room-show-image, .reservations-new-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-show-nav, .reservations-new-nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+
+.room-show-date-select label, .reservations-new-date-select label {
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.room-show-detile, .reservations-new-detile {
+  display: flex;
+  align-items: center;
+}
+
+
+.room-show-detile-content, .reservations-new-detile-content {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.room-show-detile-icon, .reservations-new-detile-icon {
+  padding: 10px;
+}
+
+.room-show-profile, .reservations-new-profile {
+  padding: 15px;
+}
+
+.room-show-profile-name, .reservations-new-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.room-show-profile-address, .reservations-new-profile-address {
+  font-size: 14px;
+}
+
+
+.room-new {
+  width: 100%;
+}
+
+.room-nav {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 15px;
+  
+  li {
+    font-size: 18px;
+    padding: 10px;
+    
+    a:hover{
+      color: #4a90e2;
+      text-decoration: none;
+    }
+  }
+}
+  
+.room-nav-pc {
+  height: 100vh;
+    
+  .active{
+    border-right: 3px solid #4a90e2;
+      
+    a{
+      color: #4a90e2;
+    }
+  }
+}
+  
+.room-view {
+  background-color: #F6F8F9;
+  border-left: 2px solid #e2e2e2;
+}
+  
+.room-view-box {
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 50px auto;
+}
+  
+.card-body {
+  padding: 1.25rem 0;
+}
+  
+.update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+  
+  label {
+    font-weight: bold;
+  }
+}
+
+.room-show, .reservations-new {
+  padding: 30px 0;
+}
+.room-show-check-content, .reservations-new-check-content {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  
+}
+
+.room-show-image, .reservations-new-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.room-show-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-show-nav, .reservations-new-nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+
+.room-show-date-select, .reservations-new-date-select {
+  padding: 15px 0;
+}
+
+.room-show-date-select label, .reservations-new-date-select label {
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.room-show-detile, .reservations-new-detile {
+  display: flex;
+  align-items: center;
+}
+
+.room-show-detile-content, .reservations-new-detile-content {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.room-show-detile-icon, .reservations-new-detile-icon {
+  padding: 10px;
+}
+
+.room-show-profile, .reservations-new-profile {
+  padding: 15px;
+}
+
+.room-show-profile-name, .reservations-new-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.room-show-profile-address, .reservations-new-profile-address {
+  font-size: 14px;
+}
+
+
+/* 登録済みルーム一覧、予約済みルーム一覧ページ*/
+.room-posts, .reservations {
+  max-width: 100vw;
+  padding: 30px 60px;
+}
+
+.room-posts-image, .reservations-image {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.room-posts table, .reservations table {
+  min-width: 800px;
+}
+
+.room-posts thead th, .reservations table thead th {
+  padding: 8px 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.room-posts thead tr, .reservations table thead tr {
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+}
+
+.room-posts tbody tr:nth-child(even), .reservations table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.room-posts tbody td, .reservations table tbody td {
+  padding: 10px;
+}
+
+.room-posts tbody a, .reservations table tbody a {
+  color: #4a90e2;
+  text-decoration: underline;
+}
+
+.room-posts tbody .posts-name, .reservations table tbody .posts-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+
+.room-posts tbody .posts-content, .reservations table tbody .posts-content {
+  max-width: 400px;
+}
+
+.box {
+  width: 500px;
+  height: 300px;
+  margin-top: 50px;
+}

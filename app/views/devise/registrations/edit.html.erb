@@ -1,0 +1,85 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <div class=" user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h3>アカウント編集</h3>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{method: :put }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+
+              <div class="update-content">
+                <div class="row">
+                  <%= f.label :email, "メールアドレス", class: "col-md-3 required-a" %><br />
+                  <%= f.email_field :email, class: "mb-4 col-md-9" %>
+                </div>
+              </div>
+              
+              <div class="update-content">
+                <div class="row">
+                  <%= f.label :password, "新しいパスワード(変更する場合のみ入力)",class: "col-md-3"%><br />
+                  <%= f.password_field :password, class: "mb-4 col-md-9" %>
+                  <% if @minimum_password_length %>
+                    <br />
+                    <em>(<%= @minimum_password_length %> 文字以上で入力してください)</em>
+                  <% end %>
+                </div>
+              </div>
+              
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+              
+              <div class="update-content">
+                <div class="row">
+                  <%= f.label :password_confirmation ,class: "col-md-3"%><br />
+                  <%= f.password_field :password_confirmation, class: "mb-4 col-md-9" %>
+                </div>
+              </div>
+
+              <div class="update-content">
+                <div class="row">
+                  <%= f.label :current_password ,"現在のパスワード",class: "col-md-3 required-a " %><br />
+                  <%= f.password_field :current_password, autocomplete: "current-password", class: "mb-4 col-md-9" %>
+                </div>
+              </div>
+              
+              <div class="update-content">
+                <div class="row">
+                  <%= f.label :profile, "自己紹介", class: "col-md-3 required-a" %>
+                  <%= f.text_area :profile, placeholder: "自己紹介を入力", class: "mb-4 col-md-9" %>
+                </div>
+              </div>
+
+              <div class="update-content">
+                <div class="row">
+                  <%= f.label :icon_image, "アイコン画像", class: "col-md-3" %>
+                  <%= f.file_field :icon_image, class: " col-md-9", multipart: true %>
+                </div>
+              </div>
+
+              <div class="update-content">
+                <div class="row">
+                　<%= f.submit "更新", class: "btn btn-primary "%>
+                </div>
+              </div>
+            <% end %>
+
+              <div class="update-content">
+                <div class="row">
+                   <%= link_to "戻る", :back, class: "col-md-5 btn btn-secondary" %>
+                </div>
+              </div>
+
+            <div class="update-content">
+              <div class="row">
+                <%= link_to "アカウントを削除", user_path(@user), data: { confirm: "本当に削除しますか？" }, method: :delete, class: "col-md-5 btn btn-danger mx-3" %></p>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>      
+    </div>        
+  </div>
+</div>

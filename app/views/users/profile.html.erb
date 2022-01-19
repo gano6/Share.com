@@ -1,0 +1,56 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <div class="col-lg-2 user-nav user-nav-pc d-lg-block d-none">
+      <ul>
+        <li class="active">
+          <%= link_to "マイページ", users_mypage_path %>
+        </li>
+        <li class="active">
+          <%= link_to "プロフィール", users_profile_path %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>プロフィール</h5>
+          </div>
+        </div>
+        <%= form_with  model: @user, scope: @user, url: user_registration_path(@user), method: :put, local: true do |f| %>
+          <div class="update-content">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <div class="icon-box">
+                  <%= image_tag current_user.icon_image.url, class: "icon_image host-icon" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :icon_image, "アイコン画像", class: "col-md-3 required-a" %>
+              <%= f.file_field :icon_image, placeholder: "ファイルを選択", class: "mb-4 col-md-9", multipart: true %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :name, "名前", class: "col-md-3 required-a" %>
+              <%= f.text_field :name, placeholder: "名前を入力" , class: "mb-4 col-md-9" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.label :profile, "自己紹介", class: "col-md-3 required-a" %>
+              <%= f.text_area :profile, placeholder: "自己紹介を入力", class: "mb-4 col-md-9" %>
+            </div>
+          </div>
+          <div class="update-content">
+            <div class="row">
+              <%= f.submit "更新", class: "col-md-2 btn-primary mx-3" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

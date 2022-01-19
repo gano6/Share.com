@@ -1,0 +1,51 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <div class="col-md-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h3>マイページ</h3>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <div class="col-md-4 offset-md-3">
+              <div class="icon-box">
+                <%= image_tag current_user.icon_image.url, class: "icon_image host-icon" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="email">メールアドレス</label>
+            <div class="col-md-9"><%= @user.email %></div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="password">パスワード</label>
+            <div class="col-md-9"><%= @user.password %></div>
+          </div>
+        </div>
+         <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="name">名前</label>
+            <div class="col-md-9"><%= @user.name %></div>
+          </div>
+        </div>
+         <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="profile">自己紹介</label>
+            <div class="col-md-9"><%= @user.profile %></div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= link_to "編集", edit_user_registration_path, class: "col-md-2 btn btn-primary mx-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
