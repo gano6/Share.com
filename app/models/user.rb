@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :rooms, dependent: :destroy
-  has_many :reservations, dependent: :destroy
+  mount_uploader :icon_image, ImageUploader
+  
+  has_many :rooms, dependent: :delete_all
+  has_many :reservations, dependent: :delete_all
+  
+  validates :name, presence: true
+  validates :profile, presence: true
+  validates :icon_image, presence: true
 end

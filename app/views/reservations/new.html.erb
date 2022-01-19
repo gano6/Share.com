@@ -1,6 +1,6 @@
 <div class="container reservations-new">
   <div class="row">
-    <div class="col-6 offset-3">
+    <div class="col-6">
       <div class="reservations-new-nav">
         <h4 class="reservations-new-check-content">予約内容確認</h4>
         <h5 class="price-icon"><%= @reservation.room.price %> / 日</h5>
@@ -25,8 +25,7 @@
           <p class="reservations-new-checkout-content">
             上記内容でよろしければ「予約を確定」を押してください
           </p>
-            
-          <%= form_with model: @reservation, url: reservation_path, class: "new_reservation", local: true do |f| %>
+          <%= form_with model: @reservation, url: reservations_path, class: "new_reservation", local: true do |f| %>
             <%= f.hidden_field :room_id, value: @room.id %>
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :reservation_id, value: @reservation.id %>
@@ -34,7 +33,7 @@
             <%= f.hidden_field :end_date %>
             <%= f.hidden_field :person_num %>
             <%= f.submit "予約を確定" , class: "btn btn-primary form-control my-3" %>
-            <%= f.submit "ルーム詳細に戻る", name: :back, class: "btn btn-secondary form-control"%>
+            <%= link_to "ルーム詳細に戻る", "/rooms/#{@room.id}",  class: "btn btn-secondary form-control" %>
           <% end %>
         </div>
       </div>

@@ -18,21 +18,31 @@
       </h1>
       <nav class="header-nav">
         <ul class="menu-group">
-          <li class="login"><a class="btn" href="/users/sign_in">ログイン</a></li>
-          <li class="register"><a class="btn" href="/users/sign_up">登録する</a></li>
-          <li><%= button_to "サインアウト", destroy_user_session_path, method: :delete %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "ルーム登録", new_room_path %></li>
+            <li><%= link_to "予約済みルーム一覧", reservations_path %></li>
+            <li><%= link_to "登録済みルーム一覧", rooms_path %></li>
+            <li><%= link_to "マイページ", users_mypage_path %></li>
+            <li class="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "btn btn-primary"%></li>
+            <li class="user-name"><%= current_user.name  %></li>
+            <li>
+              <a href="/users/mypage"><%= image_tag current_user.icon_image.url, width: '65px', height: '65px', class: "host-icon"%></a>
+            </li>
+          <% else %>
+            <li class="login"><%= link_to "ログイン", new_user_session_path ,class: "btn btn-primary"%></li>
+            <li class="register"><%= link_to "新規登録", new_user_registration_path , method: :get , class: "btn btn-success"%></li>
+          <% end %>
         </ul>
       </nav>
     </header>
-    <div class="clearfix"></div>
-    <div class="notifications">
+    <div class="notice">
       <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
+        <%= flash[:notice] %>
       <% end %>
     </div>
     <%= yield %>
     <footer>
-     <p>@Share.com</p>
+     <p>Share.com</p>
     </footer>
   </body>
 </html>
